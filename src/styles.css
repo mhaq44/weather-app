@@ -1,4 +1,6 @@
-h1{font-size: 40px; color: #3c3175;
+h1 {
+  font-size: 40px;
+  color: #3c3175;
   font-family: "Yeseva One", cursive;
 }
 
@@ -7,7 +9,10 @@ h1{font-size: 40px; color: #3c3175;
   color: #3c3175;
   font-family: "Yeseva One", cursive;
   font-size: 20px;
-}.display-time {font-size: 20px;}
+}
+.display-time {
+  font-size: 20px;
+}
 h3 {
   color: #3c3175;
   font-family: "Work Sans", sans-serif;
@@ -18,8 +23,9 @@ h3 {
 
 img {
   width: 100px;
-position: relative;
-top: -10px; left: -5px;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
 .current-temperature {
   color: rgb(68, 44, 130);
@@ -27,33 +33,34 @@ top: -10px; left: -5px;
   font-family: "Work Sans", sans-serif;
 }
 
-.current-location-button{
-width: 194px;
+.current-location-button {
+  width: 194px;
   background: #8f6f96;
-   color: #fffefe;
-   border: 2px solid #7c3e88;
-   border-radius: 10px;
-   padding: 5px;
-   font-family: "Work Sans", sans-serif;
-
+  color: #fffefe;
+  border: 2px solid #7c3e88;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Work Sans", sans-serif;
 }
 
 .current-location-button:hover {
   background: #fffeff;
   color: #2f1e79;
   cursor: pointer;
-  transition:all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-
-.form-control{border: 1px solid #90769d;}
-.btn {background: #7c3e88}
+.form-control {
+  border: 1px solid #90769d;
+}
+.btn {
+  background: #7c3e88;
+}
 
 .search-form {
   margin-bottom: 20px;
 }
 
-}
 .btn:hover {
   background: #f3e6eb;
   color: #2f1e79;
@@ -63,21 +70,16 @@ width: 194px;
 .current-icon {
   width: 180px;
   position: relative;
-  left: -130px; top: -20px;
-  ;
+  left: -130px;
+  top: -20px;
 }
-.current-location{
+.current-location {
   display: block;
   margin: 0 auto;
   background: #6443ea;
   color: #fff;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   font-family: "Work Sans", sans-serif;
-
-
-
-
-
 }
 .forecast-date {
   text-align: center;
@@ -99,7 +101,15 @@ width: 194px;
   font-size: 30px;
   position: relative;
   top: -30px;
-  color: #3c3175;
+  color: #aba7c2;
+}
+.active {
+  color: #562e8a;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
   text-decoration: none;
 }
 
@@ -121,7 +131,9 @@ a {
   font-size: 18px;
   font-family: "Work Sans", sans-serif;
 }
-.message-wrapper{padding: 50px 10px 0px;}
+.message-wrapper {
+  padding: 50px 10px 0px;
+}
 .reminder {
   background: rgba(202, 166, 229, 0.245);
   border: 1px solid rgba(0, 0, 0, 0);
@@ -135,23 +147,22 @@ a {
   color: #48206b;
 }
 
-.weather-app-wrapper {max-width: 900px;
-margin:30px auto; padding: 20px;
-  
-
-   } 
-
+.weather-app-wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
 
 .weather-app {
-  padding: 35px ;
+  padding: 35px;
   border-radius: 25px;
   border: #f4978e;
   background-image: linear-gradient(to top, #ffdab9 0%, #fae7fc 90%);
-
-  
 }
 
-.overview {margin: 30px auto;}
+.overview {
+  margin: 30px auto;
+}
 
 .col-2 {
   background: rgba(49, 10, 81, 0.361);
@@ -160,7 +171,6 @@ margin:30px auto; padding: 20px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 5px rgb(39 39 39 / 30%);
-  font-size: 20px; 
-    width: 15%;
+  font-size: 20px;
+  width: 15%;
 }
-
