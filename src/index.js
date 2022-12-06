@@ -25,7 +25,7 @@ function formatDate(date) {
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-
+  document.querySelector("#country").innerHTML = response.data.sys.country;
   temperatureElement = document.querySelector("#current-temperature");
   console.log(response);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
