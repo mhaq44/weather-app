@@ -22,6 +22,7 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(
@@ -35,7 +36,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector("#current-condition").innerHTML =
+  icon = document.querySelector("#current-condition").innerHTML =
     response.data.weather[0].main;
 
   document.querySelector("#high-temp").innerHTML = Math.round(
@@ -44,6 +45,13 @@ function displayWeatherCondition(response) {
   document.querySelector("#low-temp").innerHTML = Math.round(
     response.data.main.temp_min
   );
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute("src", `icons/${response.data.weather[0].icon}.svg`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
