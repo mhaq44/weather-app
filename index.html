@@ -2,192 +2,108 @@
 <html>
 
 <head>
-    <title>Parcel Sandbox</title>
-    <meta charset="UTF-8" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-    <link href="src/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Yeseva+One&display=swap"
-        rel="stylesheet">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/styles.css">
+  <title>Parcel Sandbox</title>
+  <meta charset="UTF-8" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link href="src/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Yeseva+One&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="src/styles.css">
 
-    <script src="https://basmilius.github.io/weather-icons/index.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@latte-ui/css@2.0.0-dev.7/dist/latte-ui.css" type="text/css" />
-    <link rel="stylesheet" href="https://font.mili.us/css2?family=jetbrains-mono-variable:ital" type="text/css" />
+  <script src="https://basmilius.github.io/weather-icons/index.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@latte-ui/css@2.0.0-dev.7/dist/latte-ui.css" type="text/css" />
+  <link rel="stylesheet" href="https://font.mili.us/css2?family=jetbrains-mono-variable:ital" type="text/css" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="weather-app-wrapper">
-            <div class="weather-app">
-                <form class="search-form" id="search-form">
-                    <div class="row">
-                        <div class="col-9">
-                            <input type="search" placeholder="Enter a City..." autofocus="on" autocomplete="off"
-                                id="city-input" class="form-control shadow-sm" />
-                        </div>
-                        <div class="col-3">
-                            <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
-                        </div>
-                    </div>
-                </form>
+  <div class="container">
+    <div class="weather-app-wrapper">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-9">
+              <input type="search" placeholder="Enter a City..." autofocus="on" autocomplete="off" id="city-input"
+                class="form-control shadow-sm" />
+            </div>
+            <div class="col-3">
+              <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+            </div>
+          </div>
+        </form>
 
-                <div class="overview">
-                    <div class="row">
-                        <div class="col-9">
+        <div class="overview">
+          <div class="row">
+            <div class="col-9">
 
-                            <h1> <span id="city">London></span>, <span id="country">GB</span></h1>
+              <h1> <span id="city">London></span>, <span id="country">GB</span></h1>
 
-                        </div>
+            </div>
 
-                        <div class="col-3">
-                            <button class="current-location-button" id="current-location-button">
-                                Current</button>
-                        </div>
-                    </div>
-
-
-
-
-                    <span class="display-day" id="date"> </span><span class="display-time"> </span>
-                </div>
-
-                <div class="row">
-                    <div class="col-4">
-                        <h2>
-                            <span class="current-temperature" id="current-temperature">23</span>
-
-                            <span class="units">
-                                <a href="#" id="celsius-link" class="active">°C</a> |
-                                <a href="#" id="fahrenheit-link">°F</a>
-                            </span>
-                        </h2>
-
-                        <h3 id="current-condition" class="current-condition">SUNNY</h3>
-
-                    </div>
-                    <div class="col-4">
-                        <img class="current-icon" id="icon"
-                            src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg"
-                            alt="Sunny">
-                    </div>
-                    <div class="col-4">
-                        <div class="more-info">
-                            <i class="fa-solid fa-temperature-arrow-up" id="high-temp"> 24
-                            </i> <br>
-                            <i class="fa-solid fa-temperature-arrow-down" id="low-temp"> 18</i>
-                            <hr>
-                            <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
-                            </div>
-                            <div>
-                                <strong> Humidity: </strong><span id="humidity">81</span>%
-                            </div>
-                            <div> <strong>Wind:</strong> <span id="wind">3</span>km/h</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="message-wrapper">
-                    <p class="reminder" id="message">"Everything is fine when there is
-                        sunshine!"</p>
-                </div>
-
-
-                <div class="forcast-wrapper">
-                    <div class="=container">
-                        <br>
-                        <div class="row">
+            <div class="col-3">
+              <button class="current-location-button" id="current-location-button">
+                Current</button>
+            </div>
+          </div>
 
 
 
 
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Fri</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/b4a267d78315b1588f80bb071cbb7e187160e36b7d2c9bf79de3ecfa912a121a/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f7261696e2e737667"
-                                    alt="" width="70">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 12°</span>/
-                                    <span class="forecast-minimum"> 8°</span>
-                                </div>
-                            </div>
-
-
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Sat</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/1aab89eda0e0e99d9aa2e7318d8161c370bfb6d75c2945a60f3b0cd1eb8a8c3c/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f706172746c792d636c6f7564792d6461792e737667"
-                                    alt="" width="70">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 13°</span>/
-                                    <span class="forecast-minimum"> 6°</span>
-                                </div>
-                            </div>
-
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Sun</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/b4a267d78315b1588f80bb071cbb7e187160e36b7d2c9bf79de3ecfa912a121a/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f7261696e2e737667"
-                                    alt="" width="70" class="weather-emoji">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 12°</span>/
-                                    <span class="forecast-minimum"> 10°</span>
-                                </div>
-                            </div>
-
-
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Mon</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/b4a267d78315b1588f80bb071cbb7e187160e36b7d2c9bf79de3ecfa912a121a/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f7261696e2e737667"
-                                    alt="" width="70">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 15°</span>/
-                                    <span class="forecast-minimum"> 11°</span>
-                                </div>
-                            </div>
-
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Tue</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/b4a267d78315b1588f80bb071cbb7e187160e36b7d2c9bf79de3ecfa912a121a/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f7261696e2e737667"
-                                    alt="" width="70">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 14°</span>/
-                                    <span class="forecast-minimum"> 12°</span>
-                                </div>
-                            </div>
-
-                            <div class="col-2">
-                                <div class="forecast-date">
-                                    <h5>Wed</h5>
-                                </div>
-                                <img src="https://camo.githubusercontent.com/1aab89eda0e0e99d9aa2e7318d8161c370bfb6d75c2945a60f3b0cd1eb8a8c3c/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f706172746c792d636c6f7564792d6461792e737667"
-                                    alt="" width="70">
-                                <div class="forecast-temperature">
-                                    <span class="forecast-maximum"> 14°</span>/
-                                    <span class="forecast-minimum"> 10°</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-            </div> <small><a href="https://github.com/mhaq44/weather-app" target="_blank">Open-source code</a>, by
-                Marjana
-                Haque</small>
+          <span class="display-day" id="date"> </span><span class="display-time"> </span>
         </div>
+
+        <div class="row">
+          <div class="col-4">
+            <h2>
+              <span class="current-temperature" id="current-temperature">23</span>
+
+              <span class="units">
+                <a href="#" id="celsius-link" class="active">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+            </h2>
+
+            <h3 id="current-condition" class="current-condition">SUNNY</h3>
+
+          </div>
+          <div class="col-4">
+            <img class="current-icon" id="icon"
+              src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg" alt="Sunny">
+          </div>
+          <div class="col-4">
+            <div class="more-info">
+              <i class="fa-solid fa-temperature-arrow-up" id="high-temp"> 24
+              </i> <br>
+              <i class="fa-solid fa-temperature-arrow-down" id="low-temp"> 18</i>
+              <hr>
+              <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+              </div>
+              <div>
+                <strong> Humidity: </strong><span id="humidity">81</span>%
+              </div>
+              <div> <strong>Wind:</strong> <span id="wind">3</span>km/h</div>
+            </div>
+          </div>
+        </div>
+        <div class="message-wrapper">
+          <p class="reminder" id="message">"Everything is fine when there is
+            sunshine!"</p>
+        </div>
+        <br>
+
+        <div class="forcast-wrapper" id="forecast">
+
+
+
+
+        </div> <small><a href="https://github.com/mhaq44/weather-app" target="_blank">Open-source code</a>, by
+          Marjana
+          Haque</small>
+      </div>
     </div>
 </body>
 <script src="src/index.js"></script>

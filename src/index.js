@@ -23,6 +23,33 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thurs"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+              <div class="forecast-date">
+                <h5>Fri</h5>
+              </div>
+              <img
+                src="https://camo.githubusercontent.com/b4a267d78315b1588f80bb071cbb7e187160e36b7d2c9bf79de3ecfa912a121a/68747470733a2f2f626d63646e2e6e6c2f6173736574732f776561746865722d69636f6e732f76332e302f66696c6c2f7376672f7261696e2e737667"
+                alt="" width="70">
+              <div class="forecast-temperature">
+                <span class="forecast-maximum"> 12°</span>/
+                <span class="forecast-minimum"> 8°</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
@@ -117,3 +144,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 searchCity("London");
+displayForecast();
