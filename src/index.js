@@ -35,7 +35,7 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row daily-wrap">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -46,7 +46,7 @@ function displayForecast(response) {
               </div>
               <img
                 src="icons/${forecastDay.weather[0].icon}.svg"
-                alt="" width="70"
+                alt="" width="70" class="daily-icons"
                 />
               <div class="forecast-temperature">
                 <span class="forecast-maximum"> ${Math.round(
@@ -103,6 +103,9 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
+
+  let backgroundElement = document.querySelector(".transparent-box");
+  backgroundElement.style.backgroundImage = `url(src/img-background/${response.data.weather[0].icon}.jpg)`;
 }
 
 function searchCity(city) {
