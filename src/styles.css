@@ -136,6 +136,7 @@ a {
   box-shadow: 5px 5px 5px rgb(39 39 39 / 7%);
   font-size: 18px;
   font-family: "Work Sans", sans-serif;
+  backdrop-filter: blur(5px);
 }
 .message-wrapper {
   margin: 10px 0px 10px 20px;
@@ -144,6 +145,7 @@ a {
   text-align: center;
   position: relative;
   float: right;
+  backdrop-filter: blur(5px);
 }
 .reminder {
   background: rgba(255, 254, 255, 0.048);
@@ -155,6 +157,7 @@ a {
   padding: 5px;
   font-family: "Work Sans", sans-serif;
   color: #f5edfd;
+  backdrop-filter: blur(5px);
 }
 
 .overview {
@@ -165,11 +168,13 @@ a {
   margin: 10px auto;
   padding: 10px;
   border-radius: 5px;
+  backdrop-filter: blur(5px);
 }
 
 .transparent-box {
   padding: 30px;
 
+  backdrop-filter: blur(5px);
   border: 2px solid rgba(255, 255, 255, 0.247);
   max-width: 100%;
   border-radius: 1px;
@@ -185,7 +190,7 @@ a {
 }
 
 .weather-app {
-  background: rgba(245, 245, 245, 0.103);
+  background: rgba(245, 245, 245, 0.12);
   margin: 20px auto;
   padding: 35px;
   border-radius: 5px;
