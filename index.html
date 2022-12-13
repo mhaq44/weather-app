@@ -15,7 +15,7 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="src/styles.css">
   <link rel="stylesheet" href="images/sunny.jpg">
-
+  <script src="https://kit.fontawesome.com/88f7eeba19.js" crossorigin="anonymous"></script>
   <script src="https://basmilius.github.io/weather-icons/index.js">
   </script>
   <link rel="stylesheet" href="https://unpkg.com/@latte-ui/css@2.0.0-dev.7/dist/latte-ui.css" type="text/css" />
@@ -37,7 +37,8 @@
                 <div class="col-3">
                   <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
                 </div><span class="col-1">
-                  <input type="submit" value="📍" class="form-control btn btn-primary shadow-sm current-location-button"
+                  <input type="submit" value="📍"
+                    class="form-control btn btn-primary shadow-sm current-location-button hithere"
                     id="current-location-button" />
 
                 </span>
@@ -50,18 +51,19 @@
                 <div class="col-4">
                   <h1> <span id="city">London></span>, <span id="country">GB</span></h1>
 
+                  <div class="last-updated"> Last updated: </div>
 
                   <div>
                     <span class="display-day" id="date"> </span><span class="display-time"> </span>
                   </div>
-
+                  <br>
 
                   <div>
 
                     <span class="current-temperature" id="current-temperature">23</span>
 
                     <span class="units">
-                      <a href="#" id="celsius-link" class="active">°C</a>
+                      °C
                     </span>
 
                   </div>
@@ -76,36 +78,78 @@
                 </div>
                 <div class="col-4">
                   <div class="more-info">
-                    <i class="fa-solid fa-temperature-arrow-up" id="high-temp"> 24
-                    </i> <br>
-                    <i class="fa-solid fa-temperature-arrow-down" id="low-temp"> 18</i>
+
+                    <div class="card">
+                      <div class="card-body temp-range-card">
+                        <div class="row">
+                          <div class="col-4 max-temp" id="max-temp">
+                            <i class="fa-solid fa-temperature-arrow-up">
+                            </i>
+                          </div>
+                          <div class="col-8 high-temp">
+                            <span id="high-temp"> </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card">
+                      <div class="card-body temp-range-card">
+                        <div class="row">
+                          <div class="col-4 min-temp">
+                            <i class="fa-solid fa-temperature-arrow-down" id="min-temp"></i>
+                          </div>
+                          <div class="col-8 low-temp">
+                            <span id="low-temp"> </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
                     <hr>
-                    <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+                    <div class="row">
+                      <div class="col-3 more-icon">
+                        <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
+
+                      </div>
+
+                      <div class="col-9 info">
+                        <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+                        </div>
+                        <div>
+                          <strong> Humidity: </strong><span id="humidity">81</span>%
+                        </div>
+                        <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
+                      </div>
                     </div>
-                    <div>
-                      <strong> Humidity: </strong><span id="humidity">81</span>%
-                    </div>
-                    <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="message-wrapper">
-              <p class="reminder" id="message">"Everything is fine when there is
-                sunshine!"</p>
-            </div>
-            <br>
 
-            <div class="forcast-wrapper" id="forecast">
-            </div>
+              <div class="message-wrapper">
+                <p class="reminder" id="message">"Everything is fine when there is
+                  sunshine!"</p>
+              </div>
+              <br>
 
-          </div><small><a href="https://github.com/mhaq44/weather-app" target="_blank">Open-source code</a>, by
-            Marjana
-            Haque</small>
+              <div class="forcast-wrapper" id="forecast">
+              </div>
+
+            </div><small><a href="https://github.com/mhaq44/weather-app" target="_blank">Open-source code</a>, by
+              Marjana
+              Haque</small>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+
 </body>
 <script src="src/index.js"></script>
 

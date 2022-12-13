@@ -5,28 +5,28 @@ body {
 }
 h1 {
   font-size: 40px;
-  color: #3c3175;
+  color: #e8e3ff;
   font-family: "Yeseva One", cursive;
 }
 
 .display-day,
 .display-time {
-  color: #3c3175;
+  color: #e8e3ff;
   font-family: "Yeseva One", cursive;
-  font-size: 20px;
-}
-.display-time {
   font-size: 20px;
 }
 
 h3 {
-  color: #3c3175;
+  color: #e8e3ff;
   font-family: "Work Sans", sans-serif;
-  position: relative;
-  top: -30px;
+
   font-size: 25px;
 }
-
+.last-updated {
+  color: #e8e3ff;
+  font-family: "Work Sans", sans-serif;
+  font-size: 15px;
+}
 .daily-icons {
   width: 100px;
   position: relative;
@@ -34,9 +34,15 @@ h3 {
   left: -5px;
 }
 .current-temperature {
-  color: rgb(68, 44, 130);
-  font-size: 80px;
+  color: rgb(233, 224, 255);
+  font-size: 60px;
+  padding: 0px;
   font-family: "Work Sans", sans-serif;
+}
+.card {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  border-color: rgba(223, 235, 245, 0.2);
 }
 
 .current-location-button {
@@ -87,6 +93,30 @@ h3 {
   padding: 10px 20px;
   font-family: "Work Sans", sans-serif;
 }
+
+.hithere:hover {
+  animation: hithere 1s ease;
+  background-color: #9b95d9;
+}
+@keyframes hithere {
+  30% {
+    transform: scale(1.2);
+  }
+  40%,
+  60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .forecast-date {
   text-align: center;
   font-family: "Yeseva One", cursive;
@@ -96,7 +126,7 @@ h3 {
 .forecast-temperature {
   font-size: 16px;
   text-align: center;
-  color: rgb(41, 38, 38);
+  color: rgb(252, 243, 243);
   font-family: "Work Sans", sans-serif;
 }
 
@@ -104,25 +134,15 @@ h3 {
   opacity: 0.8;
 }
 .units {
-  font-size: 30px;
+  font-size: 20px;
   position: relative;
-  top: -30px;
-  color: #aba7c2;
-}
-.active {
-  color: #562e8a;
-  cursor: default;
-  text-decoration: none;
+  top: -25px;
+
+  color: #d8d2ff;
 }
 
 .active:hover {
   text-decoration: none;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
 }
 
 .more-info {
@@ -132,11 +152,17 @@ a {
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
   padding: 10px;
-  color: rgb(18, 18, 18);
+  color: rgb(255, 244, 244);
   box-shadow: 5px 5px 5px rgb(39 39 39 / 7%);
   font-size: 18px;
   font-family: "Work Sans", sans-serif;
   backdrop-filter: blur(5px);
+}
+.info {
+  text-align: left;
+}
+.more-icon {
+  text-align: right;
 }
 .message-wrapper {
   margin: 10px 0px 10px 20px;
@@ -193,5 +219,6 @@ a {
   background: rgba(245, 245, 245, 0.12);
   margin: 20px auto;
   padding: 35px;
-  border-radius: 5px;
+  border-radius: 20px;
+  border: #e8e3ff;
 }
