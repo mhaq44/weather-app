@@ -32,14 +32,13 @@
               <div class="row">
                 <div class="col-8">
                   <input type="search" placeholder="Enter a City" autofocus="on" autocomplete="off" id="city-input"
-                    class="form-control shadow-sm" />
+                    class="form-control bar" />
                 </div>
                 <div class="col-3">
-                  <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+                  <input type="submit" value="Search" class="form-control btn" />
                 </div><span class="col-1">
-                  <input type="submit" value="📍"
-                    class="form-control btn btn-primary shadow-sm current-location-button hithere"
-                    id="current-location-button" />
+                  <button type="submit" class="form-control current-location-button hithere"
+                    id="current-location-button"><i class="fa-solid fa-location-arrow"></i></button>
 
                 </span>
               </div>
@@ -108,21 +107,23 @@
 
 
                     <hr>
-                    <div class="row">
-                      <div class="col-3 more-icon">
-                        <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
-                        <div> <i class="fa-solid fa-droplet"></i></div>
-                        <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="card">
+                      <div class="row">
+                        <div class="col-3 more-icon">
+                          <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
+                          <div> <i class="fa-solid fa-droplet"></i></div>
+                          <div> <i class="fa-solid fa-wind"></i></div>
 
-                      </div>
+                        </div>
 
-                      <div class="col-9 info">
-                        <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+                        <div class="col-9 info">
+                          <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+                          </div>
+                          <div>
+                            <strong> Humidity: </strong><span id="humidity">81</span>%
+                          </div>
+                          <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
                         </div>
-                        <div>
-                          <strong> Humidity: </strong><span id="humidity">81</span>%
-                        </div>
-                        <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
                       </div>
                     </div>
                   </div>
@@ -130,8 +131,23 @@
               </div>
 
               <div class="message-wrapper">
-                <p class="reminder" id="message">"Everything is fine when there is
-                  sunshine!"</p>
+
+
+                <section class="player">
+
+                  <p class="text-player" id="text-player"> Here's the
+                    perfect soundtrack
+                    for starless nights:</p>
+
+
+                  <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/5YMXGBD6vcYP7IolemyLtK?utm_source=generator&theme=0"
+                    width="100%" height="150" frameBorder="0" allowfullscreen="" allowtransparency="true" ;
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+                    id="music-player"></iframe>
+
+                </section>
+
               </div>
               <br>
 

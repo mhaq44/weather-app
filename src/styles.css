@@ -22,6 +22,7 @@ h3 {
 
   font-size: 25px;
 }
+
 .last-updated {
   color: #e8e3ff;
   font-family: "Work Sans", sans-serif;
@@ -43,60 +44,37 @@ h3 {
   background: rgba(255, 255, 255, 0);
   border-radius: 10px;
   border-color: rgba(223, 235, 245, 0.2);
+  transition: background-color 0.5s;
+  padding: 10px;
 }
-
-.current-location-button {
-  width: 80px;
-  background: #8f6f96;
-  color: #fffefe;
-  border: 2px solid #7c3e88;
-  border-radius: 10px;
-  padding: 5px;
-  font-family: "Work Sans", sans-serif;
-}
-
-.current-location-button:hover {
-  background: #fffeff;
-  color: #2f1e79;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.form-control {
-  border: 1px solid #90769d;
-}
-.btn {
-  background: #7c3e88;
+.card:hover {
+  border-color: #d8d2ff;
 }
 
 .search-form {
   margin-bottom: 20px;
 }
 
-.btn:hover {
-  background: #f3e6eb;
-  color: #2f1e79;
-  cursor: pointer;
-}
-
 .current-icon {
-  width: 180px;
+  width: 150px;
   position: relative;
-  left: -130px;
-  top: -20px;
+  left: -170px;
+  top: 80px;
 }
-.current-location {
+.current-location-button {
   display: block;
   margin: 0 auto;
   background: #6443ea;
-  color: #fff;
+  color: rgb(225, 219, 229);
   padding: 10px 20px;
   font-family: "Work Sans", sans-serif;
 }
-
+.form-control.current-location-button.hithere {
+}
 .hithere:hover {
   animation: hithere 1s ease;
-  background-color: #9b95d9;
+  background-color: #9b95d975;
+  color: #f5edfd;
 }
 @keyframes hithere {
   30% {
@@ -137,7 +115,6 @@ h3 {
   font-size: 20px;
   position: relative;
   top: -25px;
-
   color: #d8d2ff;
 }
 
@@ -148,7 +125,7 @@ h3 {
 .more-info {
   font-size: 18px;
   text-align: center;
-  background-color: #f0ece30e;
+  background-color: #f0ece305;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
   padding: 10px;
@@ -175,16 +152,17 @@ h3 {
   position: relative;
   left: 8px;
 }
+
 .message-wrapper {
   margin: 10px 0px 10px 20px;
-  width: 150px;
+  width: 200px;
   display: block;
   text-align: center;
   position: relative;
+  top: 0px;
   float: right;
-  backdrop-filter: blur(5px);
 }
-.reminder {
+.text-player {
   background: rgba(255, 254, 255, 0.048);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 5px;
@@ -194,6 +172,7 @@ h3 {
   font-family: "Work Sans", sans-serif;
   color: #f5edfd;
   backdrop-filter: blur(5px);
+  width: 200px;
 }
 
 .overview {
@@ -203,10 +182,13 @@ h3 {
   background: rgba(245, 245, 245, 0.186);
   margin: 10px auto;
   padding: 10px;
-  border-radius: 5px;
   backdrop-filter: blur(5px);
-}
 
+  border-radius: 10px;
+}
+.daily-wrap:hover {
+  border-color: #d8d2ff;
+}
 .transparent-box {
   padding: 30px;
 
@@ -231,4 +213,25 @@ h3 {
   padding: 35px;
   border-radius: 20px;
   border: #e8e3ff;
+}
+input.form-control.btn {
+  background-color: #f5f0fff5;
+  font-family: "Yeseva One", cursive;
+  color: black;
+}
+input.form-control.btn:hover {
+  background-color: #dccbff97;
+  color: #faf2f2;
+
+  font-size: 16px;
+  border: 2px solid rgba(249, 249, 249, 0.591);
+  transition: ease-in-out 0.3s;
+}
+
+input.form-control.bar {
+  background-color: #f5f0ffe0;
+  font-family: "Yeseva One", cursive;
+}
+input.form-control.bar:hover {
+  border: 2px solid rgba(240, 240, 240, 0.591);
 }
