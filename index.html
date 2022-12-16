@@ -14,7 +14,7 @@
     rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="src/styles.css">
-  <link rel="stylesheet" href="images/sunny.jpg">
+
   <script src="https://kit.fontawesome.com/88f7eeba19.js" crossorigin="anonymous"></script>
   <script src="https://basmilius.github.io/weather-icons/index.js">
   </script>
@@ -33,6 +33,15 @@
                 <div class="col-8">
                   <input type="search" placeholder="Enter a City" autofocus="on" autocomplete="off" id="city-input"
                     class="form-control bar" />
+
+
+                  <div class="head">
+                    <i class="" alt="" id="current-temp-icon"></i>
+                    <span class="today-temp" id="today-temp"></span>
+                  </div>
+
+
+
                 </div>
                 <div class="col-3">
                   <input type="submit" value="Search" class="form-control btn" />
@@ -135,17 +144,11 @@
 
                 <section class="player">
 
-                  <p class="text-player" id="text-player"> Here's the
-                    perfect soundtrack
-                    for starless nights:</p>
-
-
-                  <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/track/5YMXGBD6vcYP7IolemyLtK?utm_source=generator&theme=0"
-                    width="100%" height="150" frameBorder="0" allowfullscreen="" allowtransparency="true" ;
+                  <p class="text-player" id="text-player"></p>
+                  <iframe style="border-radius:12px" src="" width="200px" height="100" frameBorder="0"
+                    allowfullscreen=""
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
                     id="music-player"></iframe>
-
                 </section>
 
               </div>
@@ -158,10 +161,16 @@
               Marjana
               Haque</small>
           </div>
+
         </div>
       </div>
+
+
     </div>
 
+
+
+  </div>
 
 </body>
 <script src="src/index.js"></script>
