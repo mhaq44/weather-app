@@ -23,7 +23,6 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-// get the class of the weather icon, needed for dark mode
 function getWeatherIconClass(code) {
   if (!(code in customWeatherData)) {
     code = "default";
@@ -33,16 +32,17 @@ function updatePlayer(code) {
   let musicPlayerElement = document.querySelector("#music-player");
   let textPlayerElement = document.querySelector("#text-player");
   let bgImage = document.querySelector(".transparent-box");
+
   if (!(code in customWeatherData)) {
     code = "default";
   }
+
+  bgImage.style.backgroundImage = `${customWeatherData[code].backgroundImage}`;
   musicPlayerElement.setAttribute(
     "src",
     `https://open.spotify.com/embed/track/${customWeatherData[code].spotifyId}`
   );
   textPlayerElement.innerHTML = customWeatherData[code].trackDescription;
-
-  bgImage.style.backgroundImage = `${customWeatherData[code].backgroundImage}`;
 }
 
 function displayForecast(response) {
@@ -79,7 +79,7 @@ function displayForecast(response) {
 
   let currentTempIconElement = document.querySelector("#current-temp-icon");
   let iconClass = getWeatherIconClass(response.data.current.weather[0].icon);
-  currentTempIconElement.setAttribute("class", `fas ${iconClass}`);
+  currentTempIconElement.setAttribute("class", `fa-solid ${iconClass}`);
   updatePlayer(response.data.current.weather[0].icon);
 }
 
@@ -128,9 +128,6 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
-
-  //let backgroundElement = document.querySelector(".transparent-box");
-  // backgroundElement.style.backgroundImage = url(src/img-background/${response.data.weather[0].icon}.jpg)`;
 }
 
 function searchCity(city) {
@@ -184,67 +181,66 @@ function formatDay(timestamp) {
 let customWeatherData = {
   "01d": {
     // clear sky, day
-    iconClass: "fa-sun",
+    iconClass: "fa-house",
     spotifyId: "5YMXGBD6vcYP7IolemyLtK?utm_source=generator",
-    trackDescription:
-      "What a beautiful sunny day! Get inspired by this soundtrack for today’s wild adventures:",
+    trackDescription: "Soak up the sunshine with this breathtaking soundtrack:",
     backgroundImage: "url(src/img-background/01d.jpg)",
   },
 
   "01n": {
     // clear sky, night
-    iconClass: "fa-moon",
+    iconClass: "fa-house",
     spotifyId: "0o9zmvc5f3EFApU52PPIyW?utm_source=generator",
     trackDescription:
-      "What a crystal-clear, cloudless sky! Here's the perfect soundtrack for looking at the stars:",
+      "Here's the perfect soundtrack to guide you across the night sky:",
     backgroundImage: "url(src/img-background/01n.jpg)",
   },
   "02d": {
     // few clouds, day
-    iconClass: "fa-cloud-sun",
+    iconClass: "fa-house",
     spotifyId: "0T5iIrXA4p5GsubkhuBIKV?utm_source=generator",
     trackDescription:
-      "Yeehaw, there’re only a few clouds in the sky! Listen to the perfect soundtrack for this wonderful day:",
+      "Listen to this gentle soundtrack and dive into the beauty of today:",
     backgroundImage: "url(src/img-background/02d.jpg)",
   },
   "02n": {
     // few clouds, night
-    iconClass: "fa-cloud-moon",
+    iconClass: "fa-house",
     spotifyId: "7zFXmv6vqI4qOt4yGf3jYZ?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the clouds hiding the stars! Here's the perfect track for gloomy nights:",
+      "Dance with the clouds under the moonlight with this track:",
     backgroundImage: "url(src/img-background/02n.jpg)",
   },
   "03d": {
     // scattered clouds, day
-    iconClass: "fa-cloud",
+    iconClass: "fa-house",
     spotifyId: "3bjg5cbmuwDoS7e2dAWyRG?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the grey sky! Here's the perfect soundtrack for cloudy days:",
+      "Here's the perfect track for blue skies and fluffy white clouds",
     backgroundImage: "url(src/img-background/03d.jpg)",
   },
   "03n": {
     // scattered clouds, night
-    iconClass: "fa-cloud",
+    iconClass: "fa-house",
     spotifyId: "3xKsf9qdS1CyvXSMEid6g8?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the clouds! Here's the perfect soundtrack for starless nights:",
+      "Tune in to this track and wander through the cloudy night:",
     backgroundImage: "url(src/img-background/03n.jpg)",
   },
   "04d": {
     // broken clouds, day
-    iconClass: "fa-cloud",
+    iconClass: "fa-house",
     spotifyId: "5HsSsEeP3hU9QSfHZrzbtA?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the grey sky! Here's the perfect soundtrack for cloudy days:",
+      "Here's the perfect track for blue skies and fluffy white clouds:",
     backgroundImage: "url(src/img-background/04d.jpg)",
   },
   "04n": {
     // broken clouds, night
     iconClass: "fa-cloud",
-    spotifyId: "5CM4UuQ9Gnd6K2YyKGPMoK?utm_source=generator",
+    spotifyId: "5luxvKq8Oz6wp4vJy83vJq?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the clouds! Here's the perfect soundtrack for starless nights:",
+      "Tune in to this track and watch the clouds roam around the night sky:",
     backgroundImage: "url(src/img-background/04n.jpg)",
   },
   "09d": {
@@ -252,7 +248,7 @@ let customWeatherData = {
     iconClass: "fa-cloud-showers-heavy",
     spotifyId: "5v2xgL8y4XI0hi50cU574j?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the rain! Here's the perfect soundtrack for grey days:",
+      "Listen to this ambient track against the sound of pouring rain:",
     backgroundImage: "url(src/img-background/09d.jpg)",
   },
   "09n": {
@@ -260,47 +256,42 @@ let customWeatherData = {
     iconClass: "fa-cloud-showers-heavy",
     spotifyId: "08MFgEQeVLF37EyZ7jcwLc?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the rain! Here's the perfect soundtrack for starless nights:",
+      "Get inspired with this enticing soundtrack for starless nights:",
     backgroundImage: "url(src/img-background/09n.jpg)",
   },
   "10d": {
     // rain, day
     iconClass: "fa-cloud-sun-rain",
     spotifyId: "2E25yFTkFXLwtWPMqftlbZ?utm_source=generator",
-    trackDescription:
-      "It's raining cats and dogs! Here's the perfect soundtrack for singing in the rain and forgetting about the grey:",
+    trackDescription: "Here's the perfect soundtrack for singing in the rain:",
     backgroundImage: "url(src/img-background/10d.jpg)",
   },
   "10n": {
     // rain, night
     iconClass: "fa-cloud-moon-rain",
     spotifyId: "1DNA2z7Txysjk3cNz2nDLm?utm_source=generator",
-    trackDescription:
-      "Turn up the music and forget about the rain! Here's the perfect soundtrack for starless nights:",
+    trackDescription: "Tune in to this perfect track for starless nights:",
     backgroundImage: "url(src/img-background/10n.jpg)",
   },
   "11d": {
     // thunderstorm, day
     iconClass: "fa-bolt",
     spotifyId: "4lAE47gj539h8R1yxPhhGG?utm_source=generator",
-    trackDescription:
-      "Turn up the music and drown out the thunder! Here's the perfect soundtrack for stormy days:",
+    trackDescription: "Here's the perfect soundtrack for stormy days:",
     backgroundImage: "url(src/img-background/11d.jpg)",
   },
   "11n": {
     // thunderstorm, night
     iconClass: "fa-bolt",
     spotifyId: "54X78diSLoUDI3joC2bjMz?utm_source=generator",
-    trackDescription:
-      "Turn up the music and drown out the thunder! Here's the perfect soundtrack for scary nights:",
+    trackDescription: "Here's the perfect soundtrack for nostalgic nights:",
     backgroundImage: "url(src/img-background/11n.jpg)",
   },
   "13d": {
     // snow, day
     iconClass: "fa-snowflake",
     spotifyId: "4LRPiXqCikLlN15c3yImP7?utm_source=generator",
-    trackDescription:
-      "Turn up the music and forget about the cold! Here's a heartwarming track for snowy days:",
+    trackDescription: "Here's the perfect track for frosty days:",
     backgroundImage: "url(src/img-background/13d.jpg)",
   },
   "13n": {
@@ -308,31 +299,27 @@ let customWeatherData = {
     iconClass: "fa-snowflake",
     spotifyId: "2wSTnntOPRi7aQneobFtU4?utm_source=generator",
     trackDescription:
-      "Turn up the music and forget about the cold! Here's a heartwarming track for snowy nights:",
+      "As the snow blankets the earth, here's the perfect track for frosty days:",
     backgroundImage: "url(src/img-background/13n.jpg)",
   },
   "50d": {
     // mist, day
     iconClass: "fa-smog",
     spotifyId: "1boXOL0ua7N2iCOUVI1p9F?utm_source=generator",
-    trackDescription:
-      "Turn up the music and forget about the mist! Here's the perfect soundtrack for gloomy days:",
+    trackDescription: "Here's the perfect soundtrack for gloomy days:",
     backgroundImage: "url(src/img-background/50d.jpg)",
   },
   "50n": {
     // mist, night
     iconClass: "fa-smog",
     spotifyId: "3azJifCSqg9fRij2yKIbWz?utm_source=generator&theme=0",
-    trackDescription:
-      "Turn up the music and forget about the mist! Here's the perfect soundtrack for starless nights:",
+    trackDescription: "Play this tune and forget about the shroud of grey:",
     backgroundImage: "url(src/img-background/50n.jpg)",
   },
   default: {
-    // if we get an unusual code
     iconClass: "fa-question",
     spotifyId: "5YMXGBD6vcYP7IolemyLtK?utm_source=generator",
-    trackDescription:
-      "You seem to have weird weather! Get weirded out some more with this track:",
+    trackDescription: "Here's a weird song for weird days:",
     backgroundImage: "url(src/img-background/01d.jpg)",
   },
 };

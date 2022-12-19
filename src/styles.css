@@ -1,55 +1,62 @@
 body {
   width: 100%;
-  display: block;
-  margin: 0;
 }
 
 h1 {
   font-size: 40px;
-  color: #e8e3ff;
+
   font-family: "Yeseva One", cursive;
+  letter-spacing: 2px;
 }
 
 .display-day,
 .display-time {
-  color: #e8e3ff;
   font-family: "Yeseva One", cursive;
   font-size: 20px;
+  letter-spacing: 2px;
 }
 
 h3 {
-  color: #e8e3ff;
   font-family: "Work Sans", sans-serif;
-
+  letter-spacing: 2px;
   font-size: 25px;
 }
 
 .last-updated {
-  color: #e8e3ff;
   font-family: "Work Sans", sans-serif;
   font-size: 15px;
 }
 .daily-icons {
-  width: 100px;
+  width: 80px;
   position: relative;
   top: -10px;
   left: -5px;
 }
 .current-temperature {
-  color: rgb(233, 224, 255);
   font-size: 60px;
   padding: 0px;
   font-family: "Work Sans", sans-serif;
 }
+
 .card {
   background: rgba(255, 255, 255, 0);
   border-radius: 10px;
   border-color: rgba(223, 235, 245, 0.2);
   transition: background-color 0.5s;
-  padding: 10px;
+  padding: 6px;
 }
 .card:hover {
-  border-color: #d8d2ff;
+  border-color: #f9f7ff;
+  background-color: #52525337;
+}
+.card-main {
+  color: rgb(255, 251, 251);
+}
+.card-main:hover {
+  color: rgb(11, 10, 10);
+  background-color: rgba(255, 237, 240, 0.64);
+  border-radius: 8px;
+  transition: ease-in-out 0.2s;
 }
 
 .search-form {
@@ -57,24 +64,23 @@ h3 {
 }
 
 .current-icon {
-  width: 150px;
+  width: 120px;
   position: relative;
-  left: -170px;
-  top: 80px;
+  left: -150px;
+  top: 150px;
 }
 .current-location-button {
   display: block;
   margin: 0 auto;
-  background: #6443ea;
+  background: #cec2ff;
   color: rgb(225, 219, 229);
   padding: 10px 20px;
   font-family: "Work Sans", sans-serif;
 }
-.form-control.current-location-button.hithere {
-}
+
 .hithere:hover {
   animation: hithere 1s ease;
-  background-color: #9b95d975;
+  background-color: #9b95d934;
   color: #f5edfd;
 }
 @keyframes hithere {
@@ -99,13 +105,13 @@ h3 {
 .forecast-date {
   text-align: center;
   font-family: "Yeseva One", cursive;
-  color: #fff2f2;
-  font-size: 20px;
+  color: #fffdfd;
+  font-size: 18px;
 }
 .forecast-temperature {
   font-size: 16px;
   text-align: center;
-  color: rgb(252, 243, 243);
+  color: rgb(255, 255, 255);
   font-family: "Work Sans", sans-serif;
 }
 
@@ -116,11 +122,8 @@ h3 {
   font-size: 20px;
   position: relative;
   top: -25px;
-  color: #d8d2ff;
-}
 
-.active:hover {
-  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
 }
 
 .more-info {
@@ -141,11 +144,7 @@ h3 {
   padding: 0 20px;
   position: relative;
   left: 10px;
-}
-
-.info-wrap {
-  border-radius: 10px;
-  border-color: rgba(223, 235, 245, 0.2);
+  font-size: 12px;
 }
 
 .more-icon {
@@ -164,48 +163,57 @@ h3 {
   float: right;
 }
 .text-player {
-  background: rgba(255, 254, 255, 0.048);
-  border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
   box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.041);
   font-size: 14px;
-  padding: 5px;
+  padding: 10px;
+  transition: ease-in-out 0.2s;
   font-family: "Work Sans", sans-serif;
-  color: #f5edfd;
+  color: #fefdff;
   backdrop-filter: blur(5px);
   width: 200px;
+  text-align: left;
+}
+
+.text-player:hover {
+  border-color: #fff6f66a;
+  background-color: #09090954;
 }
 
 .overview {
-  margin: 30px auto;
+  margin: 0px auto;
 }
 .daily-wrap {
-  background: rgba(245, 245, 245, 0.186);
   margin: 10px auto;
   padding: 10px;
   backdrop-filter: blur(5px);
-
   border-radius: 10px;
+  border: 2px solid;
+  border-color: rgba(255, 250, 250, 0.233);
 }
+
 .daily-wrap:hover {
-  border-color: #d8d2ff;
+  border-color: rgba(255, 250, 250, 0.67);
+  background-color: rgba(93, 89, 83, 0.17);
 }
+
 .transparent-box {
   padding: 30px;
 
   backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.247);
+
   max-width: 100%;
-  border-radius: 1px;
+
   background-color: rgba(96, 125, 139, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .weather-app-wrapper {
-  max-width: 900px;
+  max-width: 800px;
   margin: 30px auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .weather-app {
@@ -221,7 +229,7 @@ input.form-control.btn {
   color: black;
 }
 input.form-control.btn:hover {
-  background-color: #dccbff97;
+  background-color: #dccbff38;
   color: #faf2f2;
 
   font-size: 16px;
@@ -235,4 +243,65 @@ input.form-control.bar {
 }
 input.form-control.bar:hover {
   border: 2px solid rgba(240, 240, 240, 0.591);
+}
+
+.cardlow:hover {
+  color: #9ecbff;
+  font-size: 20px;
+}
+.cardhigh:hover {
+  color: rgb(225, 73, 73);
+  font-size: 20px;
+}
+
+.interval:hover {
+  font-size: 16px;
+  color: #fff6f6;
+}
+.card-body {
+  padding: 10px;
+}
+
+small {
+  font-size: 15px;
+
+  text-align: center;
+  color: rgb(255, 250, 250);
+}
+
+.details-wrap {
+  position: relative;
+  left: 220px;
+}
+
+.codeLink {
+  text-decoration: none;
+  color: #fcfcff;
+  font-size: 13px;
+}
+
+.iconLink {
+  text-decoration: none;
+  color: #fcfcff;
+
+  transition: ease-in-out 0.2s;
+  font-size: 20px;
+}
+
+.codeLink:hover,
+.iconLink:hover {
+  color: black;
+}
+.codeLink:hover {
+  background-color: #f9f7ff;
+  font-size: 15px;
+  transition: ease-in-out 0.2s;
+}
+.iconLink:hover {
+  font-size: 25px;
+}
+.web-links {
+  letter-spacing: 2px;
+  position: relative;
+  left: 10px;
 }

@@ -35,13 +35,6 @@
                     class="form-control bar" />
 
 
-                  <div class="head">
-                    <i class="" alt="" id="current-temp-icon"></i>
-                    <span class="today-temp" id="today-temp"></span>
-                  </div>
-
-
-
                 </div>
                 <div class="col-3">
                   <input type="submit" value="Search" class="form-control btn" />
@@ -57,37 +50,51 @@
             <div class="overview">
               <div class="row">
                 <div class="col-4">
-                  <h1> <span id="city">London</span>, <span id="country">GB</span></h1>
 
-                  <div class="last-updated"> Last updated: </div>
+                  <div class="card-main">
+                    <div class="card-body main-range-card">
 
-                  <div>
-                    <span class="display-day" id="date"> </span><span class="display-time"> </span>
+
+
+                      <h1> <span id="city">London</span>, <span id="country">GB</span></h1>
+
+                      <div class="last-updated"> Last updated: </div>
+
+                      <div>
+                        <span class="display-day" id="date"> </span><span class="display-time"> </span>
+                      </div>
+
+
+                      <i class="" alt="" id="current-temp-icon"></i>
+
+
+                      <div>
+
+                        <span class="current-temperature" id="current-temperature">23</span>
+
+                        <span class="units">
+                          °C
+                        </span>
+
+                      </div>
+                      <div>
+                        <h3 id="current-condition" class="current-condition">SUNNY</h3>
+                      </div>
+
+
+                    </div>
                   </div>
-                  <br>
 
-                  <div>
 
-                    <span class="current-temperature" id="current-temperature">23</span>
-
-                    <span class="units">
-                      °C
-                    </span>
-
-                  </div>
-                  <div>
-                    <h3 id="current-condition" class="current-condition">SUNNY</h3>
-                  </div>
                 </div>
 
                 <div class="col-4">
-                  <img class="current-icon" id="icon"
-                    src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg" alt="Sunny">
+                  <img class="current-icon" id="icon" src="" alt="Sunny">
                 </div>
                 <div class="col-4">
                   <div class="more-info">
 
-                    <div class="card">
+                    <div class="card cardhigh">
                       <div class="card-body temp-range-card">
                         <div class="row">
                           <div class="col-4 max-temp" id="max-temp">
@@ -101,7 +108,7 @@
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card cardlow">
                       <div class="card-body temp-range-card">
                         <div class="row">
                           <div class="col-4 min-temp">
@@ -117,56 +124,116 @@
 
                     <hr>
                     <div class="card">
-                      <div class="row">
-                        <div class="col-3 more-icon">
-                          <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
-                          <div> <i class="fa-solid fa-droplet"></i></div>
-                          <div> <i class="fa-solid fa-wind"></i></div>
 
-                        </div>
 
-                        <div class="col-9 info">
-                          <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+
+                      <div class="card-body info-range-card interval ">
+                        <div class="row">
+                          <div class="col-3 more-icon ">
+                            <div> <i class="fa-solid fa-hand-holding-heart"></i></div>
                           </div>
-                          <div>
-                            <strong> Humidity: </strong><span id="humidity">81</span>%
+                          <div class="col-9 info  interval">
+
+                            <div><strong> Feels Like:</strong> <span id="feelsLike">23</span>°C
+
+                            </div>
                           </div>
-                          <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
                         </div>
                       </div>
+
+
+
+                      <div class="card-body info-range-card interval">
+                        <div class="row">
+                          <div class="col-3 more-icon ">
+                            <div> <i class="fa-solid fa-droplet"></i></div>
+                          </div>
+                          <div class="col-9 info   interval">
+
+                            <div>
+                              <strong> Humidity: </strong><span id="humidity">81</span>%
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card-body info-range-card interval">
+                        <div class="row">
+                          <div class="col-3 more-icon">
+                            <div> <i class="fa-solid fa-wind"></i></div>
+                          </div>
+                          <div class="col-9 info  interval">
+
+                            <div> <strong>Wind:</strong> <span id="wind">3</span>m/h</div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
                     </div>
+
+
+
+
                   </div>
+
+
                 </div>
               </div>
 
-              <div class="message-wrapper">
+            </div>
 
 
-                <section class="player">
+            <div class="message-wrapper">
 
-                  <p class="text-player" id="text-player"></p>
-                  <iframe style="border-radius:12px" src="" width="200px" height="100" frameBorder="0"
-                    allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
-                    id="music-player"></iframe>
-                </section>
 
-              </div>
-              <br>
+              <section class="player">
 
-              <div class="forcast-wrapper" id="forecast">
-              </div>
+                <p class="text-player" id="text-player">
 
-            </div><small><a href="https://github.com/mhaq44/weather-app" target="_blank">Open-source code</a>, by
-              Marjana
-              Haque</small>
+                </p>
+
+                <iframe style="border-radius:10px" src="" width="200px" height="150" frameBorder="0" allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
+                  id="music-player"></iframe>
+              </section>
+
+            </div>
+            <br>
+
+            <div class="forcast-wrapper" id="forecast">
+            </div>
           </div>
 
+          <div class="details-wrap">
+
+
+            <small><a class="codeLink" href="https://github.com/mhaq44/weather-app" target="_blank">Open-source
+                code</a>,
+              by
+              <a class="codeLink" href="https://www.linkedin.com/in/marjana-h-30a732170/" target=" _blank">
+                Marjana
+                Haque</a> </small>
+
+
+            <span class="web-links">
+              <a class="iconLink" href="https://github.com/mhaq44/weather-app" target="_blank"> <i
+                  class="fa-brands fa-github"></i></a>
+
+
+              <a class="iconLink" href="https://www.linkedin.com/in/marjana-h-30a732170/" target=" _blank"> <i
+                  class="fa-brands fa-linkedin"></i></a>
+            </span>
+
+
+          </div>
         </div>
       </div>
-
-
     </div>
+
+  </div>
 
 
 
