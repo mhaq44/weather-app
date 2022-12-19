@@ -110,7 +110,7 @@ function displayWeatherCondition(response) {
     response.data.main.feels_like
   );
   icon = document.querySelector("#current-condition").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   document.querySelector("#high-temp").innerHTML = Math.round(
     response.data.main.temp_max
@@ -190,7 +190,7 @@ let customWeatherData = {
   "01n": {
     // clear sky, night
     iconClass: "fa-house",
-    spotifyId: "0o9zmvc5f3EFApU52PPIyW?utm_source=generator",
+    spotifyId: "0o9zmvc5f3EFApU52PPIyW?utm_source=generator&theme=0",
     trackDescription:
       "Here's the perfect soundtrack to guide you across the night sky:",
     backgroundImage: "url(src/img-background/01n.jpg)",
@@ -206,7 +206,7 @@ let customWeatherData = {
   "02n": {
     // few clouds, night
     iconClass: "fa-house",
-    spotifyId: "7zFXmv6vqI4qOt4yGf3jYZ?utm_source=generator",
+    spotifyId: "431s5FFJHvMBiJDjZLuxos?utm_source=generator&theme=0",
     trackDescription:
       "Dance with the clouds under the moonlight with this track:",
     backgroundImage: "url(src/img-background/02n.jpg)",
